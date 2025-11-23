@@ -1,16 +1,38 @@
-# React + Vite
+# Enhanced Shipping Form
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Bài tập nhóm 05 – Môn Lập trình Ứng dụng Web**  
+**Lớp:** CSC13008 - KTPM1
 
-Currently, two official plugins are available:
+##  Thành viên Nhóm
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+| STT | Họ và Tên | MSSV |
+|-----|-----------|------|
+| 1 | Đặng Nguyễn Thành Hiếu | 23127364 |
+| 2 | Nguyễn Đăng Khoa | 23127393 |
 
-## React Compiler
+### Các bước cài đặt
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1. Clone repository:
+```bash
+git clone https://github.com/pepemoe2/csc13008-group-assignment-05.git
+cd enhanched-shipping-form
+```
 
-## Expanding the ESLint configuration
+2. Cài đặt dependencies:
+```bash
+npm install
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+3. Cài đặt Tailwind CSS và React Hook Form (nếu cần):
+```bash
+npm install -D tailwindcss@3.3.0 postcss autoprefixer
+npm install react-hook-form
+```
+
+4. Chạy ứng dụng ở chế độ development:
+```bash
+npm run dev
+```
+
+5. Mở trình duyệt tại: `http://localhost:5173`
+
