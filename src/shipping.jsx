@@ -30,10 +30,10 @@ function ShippingStorage() {
             {data.map((d,index) => (
                 <div
                     key={index}
-                    className="flex justify-center items-start bg-gray-100 p-4 rounded-lg shadow-sm gap-8">
-                    <div>
-                        <p className="font-semibold">{d.username} - {d.phone}</p>
-                        <p className="text-gray-700 text-sm mt-1">
+                    className="flex flex-col sm:flex-row justify-between items-start sm:items-center bg-gray-100 p-3 sm:p-4 rounded-lg shadow-sm gap-3 sm:gap-4">
+                    <div className="flex-1">
+                        <p className="font-bold text-sm sm:text-base">{d.username} - {d.phone}</p>
+                        <p className="text-gray-700 text-xs sm:text-sm mt-1 break-words">
                             {d.home}, {wards.find(w => w.code === d.ward)?.name_with_type},
                             {provinces.find(p => p.code === d.province)?.name_with_type}
                         </p>
@@ -41,7 +41,7 @@ function ShippingStorage() {
 
                     <button
                         onClick={() => removeShip(index)}
-                        className='bg-blue-600 text-white font-medium'>
+                        className='w-full sm:w-auto bg-red-600 hover:bg-red-700 text-white font-medium px-4 py-2 rounded-lg transition-colors text-sm'>
                         Xóa
                     </button>
                 </div>
@@ -81,43 +81,43 @@ function ShippingForm() {
     }, [data]);
 
     return(
-        <form onSubmit ={handleSubmit(onSubmit)} className='flex flex-col gap-4'>
+        <form onSubmit ={handleSubmit(onSubmit)} className='flex flex-col gap-3 sm:gap-4'>
             <div className='flex flex-col gap-1'>
                 <div className='flex justify-between items-center'>
-                    <label className = 'text-black text-left font-bold'>
+                    <label className='text-black text-left font-bold text-sm sm:text-base'>
                         Username
                     </label>
 
-                    {errors.username && <p className='text-red-500 text-sm'>*Required</p>}
+                    {errors.username && <p className='text-red-500 text-xs sm:text-sm'>*Required</p>}
                 </div>
                 <input
                     {...register('username', {required: true })}
-                    className="bg-white p-3 border rounded-lg focus:outline-blue-500 text-black"
+                    className="bg-white p-2 sm:p-3 border rounded-lg focus:outline-blue-500 text-black text-sm sm:text-base"
                     placeholder='Nhập tên...'
                 />
                 
             </div>
 
-            <div className = 'flex flex-col gap-1'>
+            <div className='flex flex-col gap-1'>
                 <div className='flex justify-between items-center'>
-                    <label className = 'text-black text-left font-bold'>
+                    <label className='text-black text-left font-bold text-sm sm:text-base'>
                         Phone Number
                     </label>
-                    {errors.phone && <p className='text-red-500 text-sm'>*Invalid value</p>}  
+                    {errors.phone && <p className='text-red-500 text-xs sm:text-sm'>*Invalid value</p>}  
                 </div>
                 <input 
                     {...register('phone', {
                         required: true,
                         pattern: /^\d{10,11}$/
                     })}
-                    className = "bg-white p-3 border rounded-lg focus:outline-blue-500 text-black"
+                    className="bg-white p-2 sm:p-3 border rounded-lg focus:outline-blue-500 text-black text-sm sm:text-base"
                     placeholder='Nhập số điện thoại'
                 />
                
             </div>
             
-            <div className=' flex flex-col gap-1'>
-                <div className ='flex justify-between items-center'>
+            <div className='flex flex-col gap-1'>
+                <div className='flex justify-between items-center'>
                     <label className='text-black text-left font-bold'>
                         House Number
                     </label>
@@ -126,7 +126,7 @@ function ShippingForm() {
 
                 <input 
                     {...register('street', { required: true})}
-                    className = "bg-white p-2 border rounded-lg focus:outline-blue-500 text-black"
+                    className = "bg-white p-2 sm:p-3 border rounded-lg focus:outline-blue-500 text-black"
                     placeholder='Nhập đường...'
                 />
                 
@@ -143,7 +143,7 @@ function ShippingForm() {
             
                 <input 
                     {...register('housenumber', { required: true})}
-                    className = 'bg-white p-3 border rounded-lg focus-blue-500 text-black'
+                    className = 'bg-white p-3 border rounded-lg focus:outline-blue-500 text-black'
                     placeholder='Nhập số nhà...'
                 />
                 
@@ -200,7 +200,7 @@ function ShippingForm() {
             </div>
   
             
-            <button type="submit" className='bg-blue-900 p-3 rounded text-gray'>
+            <button type="submit" className='bg-blue-600 hover:bg-blue-700 p-2.5 sm:p-3 rounded-lg text-white font-bold transition-colors mt-2 text-sm sm:text-base'>
                 Submit
             </button>
         </form>
